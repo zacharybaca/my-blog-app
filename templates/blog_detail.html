@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block pagecontent %}
+
+<h1 id="blogdetailtitle">{{ blog.title }}</h1>
+
+<h2>--{{ blog.date|date:'F jS Y' }}--</h2>
+
+{{ blog.bio|safe }}
+
+{% endblock %}

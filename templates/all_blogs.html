@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block pagecontent %}
+<h1 id ="blogtitle" class="font-weight-bold text-center">Welcome To My Blog Page</h1>
+<h2 class="text-center mb-5">Zach has written {{ blogs.count }} blog{{ blogs.count|pluralize }}</h2>
+
+
+</div>
+{% for blog in blogs %}
+   <a href="{% url 'blog:detail' blog.id %}"><h2> {{ blog.title }}</h2></a>
+   <h5>{{ blog.date|date:'M d Y'|upper }}</h5>
+   <p>{{ blog.bio|striptags|truncatechars:100 }}</p>
+{% endfor %}
+
+{% endblock %}
